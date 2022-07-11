@@ -4,7 +4,7 @@ import Main from './Main'
 
 const Frame = () => {
   return (
-    <div className="w-full h-screen max-w-sm max-h-full relative flex flex-col bg-gray-400 snap-mandatory">
+    <div className="w-full h-screen max-w-sm max-h-[650px] overflow-hidden relative flex flex-col bg-gray-400 snap-mandatory">
         <Main />
         <Nav />
     </div>

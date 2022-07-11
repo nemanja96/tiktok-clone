@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import Video from './Video.js';
-import video from '../assets/video.jpg';
-import video2 from '../assets/video2.webp';
-import video3 from '../assets/video3.webp';
-import video4 from '../assets/video4.webp';
+import axios from 'axios';
 
 const Nav = () => {
+
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await axios.get('http://localhost:8001/tiktok/videos');
+        const videos = response.data;
+        setVideos(videos);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getData();
+  }, [])
+
+  console.log(videos);
+
   return (
     <div className="h-screen grid place-items-center relative">
         <div className="absolute top-6 right-6 flex gap-10 items-center z-50">
@@ -16,11 +32,12 @@ const Nav = () => {
             </div>
             <SearchOutlinedIcon sx={{ width: 28, height: 28 }} className="text-white" />
         </div>
-        <div className="w-full h-full relative overflow-scroll snap-mandatory snap-y z-10">
-            <Video imgUrl={video} />
-            <Video imgUrl={video2} />
-            <Video imgUrl={video3} />
-            <Video imgUrl={video4} />
+        <div className="w-full h-screen relative overflow-scroll snap-mandatory snap-y z-10">
+          {
+            videos.map(({ videoUrl, avatarUrl, likesNumber, commentsNumber, bookmarksNumber }) => (
+              <Video imgUrl={videoUrl} avatarUrl={avatarUrl} likes={likesNumber} comments={commentsNumber} bookmarks={bookmarksNumber} />
+            ))
+          }
         </div>
     </div>
   )
