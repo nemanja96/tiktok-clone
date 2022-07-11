@@ -1,9 +1,11 @@
 import React from 'react'
 import Nav from './Nav'
+import Main from './Main'
 
 const Frame = () => {
   return (
-    <div className="w-full max-w-sm px-4 py-2 flex flex-col bg-black">
+    <div className="w-full h-screen max-w-sm max-h-full relative flex flex-col bg-gray-400 snap-mandatory">
+        <Main />
         <Nav />
     </div>
   )
