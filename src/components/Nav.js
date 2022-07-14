@@ -13,7 +13,7 @@ const Nav = () => {
         <NavItem Icon={HomeIcon} title="Home" />
         <Link to="/friends"><NavItem Icon={PeopleAltOutlinedIcon} title="Friends" /></Link>
         <img src={tiktokLogo} alt="Tik Tok Logo" className="w-10" />
-        <NavItem Icon={ChatBubbleOutlineOutlinedIcon} title="Inbox" />
+        <Link to="/inbox"><NavItem Icon={ChatBubbleOutlineOutlinedIcon} title="Inbox" /></Link>
         <NavItem Icon={PermIdentityOutlinedIcon} title="Profile" />
     </div>
   )
