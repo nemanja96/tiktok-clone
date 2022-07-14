@@ -33,7 +33,7 @@ const Nav = () => {
         <div className="w-full h-screen relative overflow-scroll snap-mandatory snap-y z-10">
           {
             videos.map(({ videoUrl, avatarUrl, likesNumber, commentsNumber, bookmarksNumber, userName, description, hashtags }) => (
-              <Video imgUrl={videoUrl} avatarUrl={avatarUrl} likes={likesNumber} comments={commentsNumber} bookmarks={bookmarksNumber} userName={userName} description={description} hashtags={hashtags} />
+              <Video key={avatarUrl} imgUrl={videoUrl} avatarUrl={avatarUrl} likes={likesNumber} comments={commentsNumber} bookmarks={bookmarksNumber} userName={userName} description={description} hashtags={hashtags} />
             ))
           }
         </div>

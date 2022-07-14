@@ -13,7 +13,7 @@ const SidebarNav = ({ avatarUrl, likes, comments, bookmarks }) => {
         <SidebarNavItem Icon={MessageIcon} title={comments} />
         <SidebarNavItem Icon={BookmarkIcon} title={bookmarks} />
         <SidebarNavItem Icon={ReplyIcon} title="Share" smallText={true} />
-        <Avatar src={avatarUrl} alt="Nemanja Radivojevic" sx={{ width: 35, height: 35 }} className="border-8 border-black border-solid mt-3" />
+        <Avatar src={avatarUrl} alt="Nemanja Radivojevic" sx={{ width: 40, height: 40 }} className="border-8 border-black border-solid mt-3" />
     </div>
   )
 }
